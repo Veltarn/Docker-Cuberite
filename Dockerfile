@@ -22,8 +22,7 @@ RUN curl -o /usr/local/sbin/gosu -sSL "https://github.com/tianon/gosu/releases/d
 	&& chmod +x /usr/local/sbin/gosu
 
 # Preparing cuberite
-RUN mkdir -p $C_WORLDS_DIR \
-  && chown -R C_USER:C_USER $C_WORLDS_DIR
+RUN mkdir -p $C_WORLDS_DIR && chown -R $_USER:$_USER $C_WORLDS_DIR
 
 
 # Cuberite
