@@ -52,6 +52,6 @@ EXPOSE 25565 8080
 VOLUME $C_HOME
 VOLUME $C_WORLDS_DIR
 
-ENTRYPOINT ["/entrypoint.sh"]
+WORKDIR $C_HOME
 
-CMD ["Cuberite"]
+CMD ["./start_cuberite.sh"]
