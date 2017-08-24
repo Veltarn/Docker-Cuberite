@@ -46,13 +46,12 @@ COPY configs/ "$C_HOME"/Server
 COPY scripts/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
+EXPOSE 25565 8080
+
 # Creating volume
+VOLUME $C_HOME
+VOLUME $C_WORLDS_DIR
 
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["Cuberite"]
-
-EXPOSE 25565 8080
-
-VOLUME $C_HOME
-VOLUME $C_WORLDS_DIR
