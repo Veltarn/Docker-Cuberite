@@ -43,8 +43,8 @@ RUN  cd "$C_HOME" && cd cuberite && mkdir build-cuberite && cd build-cuberite \
 RUN mv "$C_HOME"/cuberite/Server "$C_HOME"/Server
 
 COPY configs/ "$C_HOME"/Server
-COPY scripts/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY scripts/start_cuberite.sh $C_HOME/Server
+RUN chmod +x $C_HOME/Server/start_cuberite.sh
 
 EXPOSE 25565 8080
 
@@ -52,6 +52,6 @@ EXPOSE 25565 8080
 VOLUME $C_HOME
 VOLUME $C_WORLDS_DIR
 
-WORKDIR $C_HOME
+WORKDIR $C_HOME/Server
 
 CMD ["./start_cuberite.sh"]
