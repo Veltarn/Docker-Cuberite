@@ -1,8 +1,9 @@
-runner:
+cuberite:
   build: .
   ports:
     - "25565:25565"
     - "8080:8080"
   tty: true
   stdin_open: true
-  name: mc
+  volumes:
+    - /mnt/minecraft:/var/lib/minecraft

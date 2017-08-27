@@ -6,7 +6,7 @@ ENV C_WORLDS_DIR /var/lib/minecraft
 ENV C_HOME /home/$C_USER
 
 # set user/group IDs
-RUN groupadd -r "$C_USER" --gid=999 && useradd -r -g "$C_USER" --uid=999 "$C_USER"
+#RUN groupadd -r "$C_USER" --gid=999 && useradd -r -g "$C_USER" --uid=999 "$C_USER"
 
 
 # Base
@@ -22,7 +22,8 @@ RUN curl -o /usr/local/sbin/gosu -sSL "https://github.com/tianon/gosu/releases/d
 	&& chmod +x /usr/local/sbin/gosu
 
 # Preparing cuberite
-RUN mkdir -p $C_WORLDS_DIR && chown -R $C_USER:$C_USER $C_WORLDS_DIR
+RUN mkdir -p $C_WORLDS_DIR \
+# && chown -R $C_USER:$C_USER $C_WORLDS_DIR
 
 
 # Cuberite

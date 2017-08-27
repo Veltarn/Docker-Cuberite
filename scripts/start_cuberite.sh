@@ -7,6 +7,7 @@ set -e
 
 # Démarrage de cuberite
 cd "$C_HOME/Server"
-exec gosu "$C_USER" Cuberite
+#exec gosu "$C_USER" ./Cuberite
+./Cuberite
 
 /bin/bash
